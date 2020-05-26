@@ -1,9 +1,9 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
 
-SET(PROJECT_NAME simpleHumanoid-rbprm)
-SET(PROJECT_DESCRIPTION "Database for simpleHumanoid robot using hpp-rbprm")
+SET(PROJECT_NAME simple-humanoid-rbprm)
+SET(PROJECT_DESCRIPTION "Database for simple-humanoid robot using hpp-rbprm")
 SET(PROJECT_URL "")
-SET(CUSTOM_HEADER_DIR "hpp/simpleHumanoid-rbprm")
+SET(CUSTOM_HEADER_DIR "hpp/simple-humanoid-rbprm")
 SET(CXX_DISABLE_WERROR true)
 SET(PROJECT_USE_CMAKE_EXPORT TRUE)
 
@@ -24,7 +24,7 @@ STRING(REGEX REPLACE "-" "_" PY_NAME ${PROJECT_NAME})
 
 SET(${PROJECT_NAME}_PYTHON_FILES
   __init__.py
-  simpleHumanoid_abstract.py
+  simple_humanoid_abstract.py
   )
 
 FOREACH(SOURCE ${${PROJECT_NAME}_PYTHON_FILES})

@@ -23,10 +23,10 @@ class Robot(Parent):
     ##
     #  Information to retrieve urdf and srdf files.
     rootJointType = 'freeflyer'
-    packageName = 'simpleHumanoid-rbprm'
-    meshPackageName = 'simpleHumanoid-rbprm'
-    urdfName = 'simpleHumanoid_trunk'
-    urdfNameRom = ['simpleHumanoid_lleg_rom', 'simpleHumanoid_rleg_rom']
+    packageName = 'simple-humanoid-rbprm'
+    meshPackageName = 'simple-humanoid-rbprm'
+    urdfName = 'simple_humanoid_trunk'
+    urdfNameRom = ['simple_humanoid_lleg_rom', 'simple_humanoid_rleg_rom']
     urdfSuffix = ""
     srdfSuffix = ""
     name = urdfName
@@ -40,5 +40,5 @@ class Robot(Parent):
         if name is not None:
             self.name = name
         Parent.__init__(self, self.name, self.rootJointType, load, client, None, clientRbprm)
-        self.setReferenceEndEffector('simpleHumanoid_lleg_rom', self.ref_EE_lLeg)
-        self.setReferenceEndEffector('simpleHumanoid_rleg_rom', self.ref_EE_rLeg)
+        self.setReferenceEndEffector('simple_humanoid_lleg_rom', self.ref_EE_lLeg)
+        self.setReferenceEndEffector('simple_humanoid_rleg_rom', self.ref_EE_rLeg)

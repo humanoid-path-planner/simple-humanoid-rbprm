@@ -22,23 +22,25 @@ from hpp.corbaserver.rbprm.rbprmbuilder import Builder as Parent
 class Robot(Parent):
     ##
     #  Information to retrieve urdf and srdf files.
-    rootJointType = 'freeflyer'
-    packageName = 'simple-humanoid-rbprm'
-    meshPackageName = 'simple-humanoid-rbprm'
-    urdfName = 'simple_humanoid_trunk'
-    urdfNameRom = ['simple_humanoid_lleg_rom', 'simple_humanoid_rleg_rom']
+    rootJointType = "freeflyer"
+    packageName = "simple-humanoid-rbprm"
+    meshPackageName = "simple-humanoid-rbprm"
+    urdfName = "simple_humanoid_trunk"
+    urdfNameRom = ["simple_humanoid_lleg_rom", "simple_humanoid_rleg_rom"]
     urdfSuffix = ""
     srdfSuffix = ""
     name = urdfName
 
     # reference position of the end effector position for each ROM
     # TODO
-    ref_EE_lLeg = [0, 0.1, -1.]
-    ref_EE_rLeg = [0, -0.1, -1.]
+    ref_EE_lLeg = [0, 0.1, -1.0]
+    ref_EE_rLeg = [0, -0.1, -1.0]
 
     def __init__(self, name=None, load=True, client=None, clientRbprm=None):
         if name is not None:
             self.name = name
-        Parent.__init__(self, self.name, self.rootJointType, load, client, None, clientRbprm)
-        self.setReferenceEndEffector('simple_humanoid_lleg_rom', self.ref_EE_lLeg)
-        self.setReferenceEndEffector('simple_humanoid_rleg_rom', self.ref_EE_rLeg)
+        Parent.__init__(
+            self, self.name, self.rootJointType, load, client, None, clientRbprm
+        )
+        self.setReferenceEndEffector("simple_humanoid_lleg_rom", self.ref_EE_lLeg)
+        self.setReferenceEndEffector("simple_humanoid_rleg_rom", self.ref_EE_rLeg)
